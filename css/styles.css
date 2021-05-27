@@ -1,5 +1,7 @@
 body{
+    color: white;
     text-align: center;
+    background-image: url("/images/snow.jpg");
 }
 #header {
     display: flex;

@@ -77,11 +77,11 @@ function computerPlay (res,e){
 
         if (playerw >= 5){
             document.getElementById("results").innerHTML = "Congratulations! You Won 5 games";
-            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(38 49 206 / 80%)";
+            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px white";
             restartgame()
         } else if ( computerw >= 5){
             document.getElementById("results").innerHTML = "You lose! Computer Won 5 games";
-            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(238 58 4 / 80%)";
+            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px white";
             restartgame()
         }
      });
@@ -105,7 +105,7 @@ function playRound(playerSelection, computerSelection) {
     addListener();
     if (playerSelection == "rock"){
         if (computerSelection == "rock"){
-            return "It is s a Tie";
+            return "It is a Tie";
         } else if (computerSelection == "paper"){
             return "Computer Won";
         } else {
@@ -147,7 +147,7 @@ function sleep(ms) {
 }
 
 function addShadow(theid){
-    document.getElementById(theid).style.boxShadow =  "0 0 13px rgb(238 58 4 / 80%)";
+    document.getElementById(theid).style.boxShadow =  "0 0 13px rgb(245 249 4 / 80%)";
 }
 
 function removeShadow(theid){
