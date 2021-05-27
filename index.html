@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title id="title">Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="header">
+    <h1>Rock-Paper-Scissors</h1>
+    </div>
+
+    <div id="score">
+    <h3 id="playerwon">Player - Won: 0</h3>
+    <h3 id="comwon">Computer - Won: 0</h3>
+    </div>
+
+    <div id="playboard">
+        <div id="player">
+            <img id = "imgrock" value = "rock" src="images/rock.png">
+            <img id = "imgpaper" value = "paper" src="images/paper.png">
+            <img id = "imgscissors"  value = "scissors" src="images/scissors.png">
+        </div>
+        <div id="playerchoice" class="choice">
+         </div>
+        <div id="computerchoice" class="choice">
+         </div>   
+        <div id="computer">
+            <img id = "rock" src="images/rock.png">
+            <img id = "paper" src="images/paper.png">
+            <img id = "scissors" src="images/scissors.png">
+        </div>
+    </div>
+
+    <div>
+    <h3 id="results" style="display:none;">Click on Pictures to play.</h3>
+    </div>
+
+    <div id="mybutton">
+    <button onclick="startgame()">Start</button>
+    </div>
+    <audio id="sound" src="sounds/tink.wav"></audio>
+    <script src="js/scripts.js"></script>
+    
+                                        
+</body>
+</html>
