@@ -9,6 +9,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 1rem 1rem 1rem 1rem;
 }
 #playerwon {
     justify-content: left;

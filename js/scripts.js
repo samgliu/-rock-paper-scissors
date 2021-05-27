@@ -8,10 +8,24 @@ let endtimescale = 200;
 let offs = 14;
 
 window.onload = function(){
-    document.getElementById("imgrock").addEventListener('click', function(e){game("rock", e)});
-    document.getElementById("imgpaper").addEventListener('click', function(e){game("paper", e)});
-    document.getElementById("imgscissors").addEventListener('click', function(e){game("scissors", e)});
+    addListener();
 }
+
+function addListener() {
+    document.getElementById("imgrock").addEventListener('click', rock);
+    document.getElementById("imgpaper").addEventListener('click', paper);
+    document.getElementById("imgscissors").addEventListener('click', scissors);
+}
+
+function removeListener(){
+    document.getElementById("imgrock").removeEventListener('click', rock);
+    document.getElementById("imgpaper").removeEventListener('click', paper);
+    document.getElementById("imgscissors").removeEventListener('click', scissors);
+}
+
+function rock(e){game("rock", e)}
+function paper(e){game("paper", e)}
+function scissors(e){game("scissors", e)}
 
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
@@ -25,7 +39,6 @@ function computerPlay (res,e){
         let tempdiv = document.querySelector(`${arr[indx]}`);
         delayAdd(tempdiv, lo);
         delayDel(tempdiv, lo);
-        console.log("waiting " + indx);
         
         indx++;
         indx = (indx + 3) % 3;
@@ -64,9 +77,11 @@ function computerPlay (res,e){
 
         if (playerw >= 5){
             document.getElementById("results").innerHTML = "Congratulations! You Won 5 games";
+            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(38 49 206 / 80%))";
             restartgame()
         } else if ( computerw >= 5){
             document.getElementById("results").innerHTML = "You lose! Computer Won 5 games";
+            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(238 58 4 / 80%)";
             restartgame()
         }
      });
@@ -87,6 +102,7 @@ function delayDel(tempdiv, i){
 }
 
 function playRound(playerSelection, computerSelection) {
+    addListener();
     if (playerSelection == "rock"){
         if (computerSelection == "rock"){
             return "It is s a Tie";
@@ -115,10 +131,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(res, e){
+    removeListener();
     playSound();
     if (comsel != undefined){
         console.log(comsel);
         removeShadow(comsel);
+        document.getElementById("resultcontainer").style.boxShadow = "none";
     }
     computerPlay(res, e);
     
