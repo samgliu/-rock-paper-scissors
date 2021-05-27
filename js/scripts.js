@@ -77,7 +77,7 @@ function computerPlay (res,e){
 
         if (playerw >= 5){
             document.getElementById("results").innerHTML = "Congratulations! You Won 5 games";
-            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(38 49 206 / 80%))";
+            document.getElementById("resultcontainer").style.boxShadow =  "0 0 13px rgb(38 49 206 / 80%)";
             restartgame()
         } else if ( computerw >= 5){
             document.getElementById("results").innerHTML = "You lose! Computer Won 5 games";
@@ -156,7 +156,7 @@ function removeShadow(theid){
 
 function startgame(){
     playSound();
-    document.getElementById("results").style="display:block;";
+    document.getElementById("results").innerText = "Click on Pictures to play.";
     document.getElementById("mybutton").style="display:none;";
 }
 
