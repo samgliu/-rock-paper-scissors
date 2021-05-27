@@ -3,6 +3,9 @@ let computerw = 0;
 let arr = ["#rock", "#paper", "#scissors"];
 let comsel;
 let indx = 0;
+let startimescale = 150;
+let endtimescale = 200;
+let offs = 14;
 
 window.onload = function(){
     document.getElementById("imgrock").addEventListener('click', function(e){game("rock", e)});
@@ -29,7 +32,7 @@ function computerPlay (res,e){
         lo++;
     }
 
-    sleep(600*(--lo)).then(() => { 
+    sleep((endtimescale - offs) * (--lo)).then(() => { 
         
        
         if (rand === 0){
@@ -74,13 +77,13 @@ function delayAdd(tempdiv, i){
     setTimeout(function(){ 
        tempdiv.classList.add('select');
        playSound();
-}, i* 500);
+}, i * startimescale);
 }
 
 function delayDel(tempdiv, i){
     setTimeout(function(){ 
        tempdiv.classList.remove('select');
-},i *600);
+},i * endtimescale);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -126,7 +129,7 @@ function sleep(ms) {
 }
 
 function addShadow(theid){
-    document.getElementById(theid).style.boxShadow =  "0 0 13px rgb(238 58 4 / 60%)";
+    document.getElementById(theid).style.boxShadow =  "0 0 13px rgb(238 58 4 / 80%)";
 }
 
 function removeShadow(theid){
