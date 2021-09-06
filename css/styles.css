@@ -1,7 +1,7 @@
 body{
     color: white;
     text-align: center;
-    background-image: url("/images/snow.jpg");
+    background-image: url("../images/snow.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
